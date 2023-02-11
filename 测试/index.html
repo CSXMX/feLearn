@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap_ ul li:hover {
+            border-style: dashed;
+            -webkit-animation: spinAround 9s linear infinite;
+            -moz-animation: spinAround 9s linear infinite;
+            animation: spinAround 9s linear infinite;
+        }
+
+        .wrap_ ul li:hover a {
+            -webkit-animation: spinAround1 9s linear infinite;
+            -moz-animation: spinAround1 9s linear infinite;
+            animation: spinAround1 9s linear infinite;
+        }
+
+        @-webkit-keyframes spinAround {
+            from {
+                -webkit-transform: rotate(0deg)
+            }
+
+            to {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @-moz-keyframes spinAround {
+            from {
+                -moz-transform: rotate(0deg)
+            }
+
+            to {
+                -moz-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spinAround {
+            from {
+                transform: rotate(0deg)
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @-webkit-keyframes spinAround1 {
+            from {
+                -webkit-transform: rotate(0deg)
+            }
+
+            to {
+                -webkit-transform: rotate(-360deg);
+            }
+        }
+
+        @-moz-keyframes spinAround1 {
+            from {
+                -moz-transform: rotate(0deg)
+            }
+
+            to {
+                -moz-transform: rotate(-360deg);
+            }
+        }
+
+        @keyframes spinAround1 {
+            from {
+                transform: rotate(0deg)
+            }
+
+            to {
+                transform: rotate(-360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap_">
+        <ul>
+            <li class="one_"><a href="">360旋转</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+var fourSum = function (nums, target) {
+    if (nums == null || nums.length < 3) {
+        return []
+    }
+    let res = []
+    nums.sort((a, b) => a - b)
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] > 0 && nums[i] > target) {
+            break;
+        }
+        if (i >= 1 && nums[i - 1] == nums[i]) {
+            continue;
+        }
+        for (let j = i + 1; j < nums.length; j++) {
+            if (j > i + 1 && nums[j - 1] == nums[j]) {
+                continue;
+            }
+            let l = j + 1;
+            let r = nums.length - 1;
+            while (l < r) {
+                let sum = nums[i] + nums[j] + nums[l] + nums[r];
+                if (sum === target) {
+                    res.push([nums[i], nums[j], nums[l], nums[r]])
+                    while (l < r && nums[l] === nums[++l]) {
+                        continue;
+                    }
+                    while (l < r && nums[r] === nums[--r]) {
+                        continue;
+                    }
+                } else if (sum > target) {
+                    r--;
+                } else {
+                    l++;
+                }
+            }
+        }
+
+    }
+    return res;
+};
